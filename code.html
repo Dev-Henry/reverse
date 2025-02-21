@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Code Gaffa</title>
+    <title>REVERSE: A Coding Project by Code Gaffa</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,7 @@
     <link href="css/site.css" rel="stylesheet">
 
     <!--fav icon-->
-    <link rel="icon" type="image/png" href="img/EKATO.svg">
+    <link rel="icon" type="image/png" href="img/">
 
     <!--Prism-->
     <link href="css/prism.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 <!--Nav section-->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/EKATO.svg" class="d-inline-block align-text-top" 
+        <a class="navbar-brand" href="#"><img src="img/" class="d-inline-block align-text-top" 
             width="30" height="24"> REVERSE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,16 +66,52 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                            function HelloWorld(){
-                                alert("Hello World");
-                                }
+                        // get the string from the page 
+//controller function 
+function getValue(){
+
+    document.getElementById("alert").classList.add("invisible");
+
+   let userString = document.getElementById("userString").value;
+
+   let revString = reverseString(userString);
+
+   displayString(revString);
+}
+
+
+// reverse the string 
+// logic function
+function reverseString(userString){
+
+    let revString = [];
+
+    //reverse a string using a for loop
+    for (let index = userString.length - 1; index >= 0; index--) {
+        revString += userString[index];
+        
+    }
+    return revString;
+
+}
+
+//display the reversed string to the user 
+//view function 
+function displayString(revString){
+
+    //write to the page 
+    document.getElementById("msg").innerHTML = `Your word reversed is: ${revString}`;
+
+    //show the alert box 
+    document.getElementById("alert").classList.remove("invisible");
+
+}
                     </code></pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function</p>
+                    <!--<p>The Code is structured in one function</p>-->
                     <h5>Documentation for REVERSE</h5>
-                    <p>Hello World is a function that displays an alert with a message "Hello World"</p>
+                    <p>I will come and work on the documentation.</p>
                 </div>
             </div>
         </div>
