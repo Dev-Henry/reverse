@@ -69,17 +69,21 @@
         <div class="container py-4 px-5 mt-5">
             <h2 class="border-1 border-bottom border-dark">The Code for REVERSE</h2>
             <div class="row row-cols-1 row-cols-lg-2">
-                <div class="col-lg-8">
+                <div class="col-lg-7">
                     <pre class="line-numbers"><code class="language-javascript">
-                        // get the string from the page 
+
+// get the string from the page 
 //controller function 
 function getValue(){
 
     document.getElementById("alert").classList.add("invisible");
 
+
    let userString = document.getElementById("userString").value;
 
+
    let revString = reverseString(userString);
+
 
    displayString(revString);
 }
@@ -89,12 +93,15 @@ function getValue(){
 // logic function
 function reverseString(userString){
 
+
     let revString = [];
+
 
     //reverse a string using a for loop
     for (let index = userString.length - 1; index >= 0; index--) {
         revString += userString[index];
         
+
     }
     return revString;
 
@@ -102,10 +109,14 @@ function reverseString(userString){
 
 //display the reversed string to the user 
 //view function 
+
+
 function displayString(revString){
 
     //write to the page 
     document.getElementById("msg").innerHTML = `Your word reversed is: ${revString}`;
+
+    
 
     //show the alert box 
     document.getElementById("alert").classList.remove("invisible");
@@ -113,10 +124,57 @@ function displayString(revString){
 }
                     </code></pre>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <!--<p>The Code is structured in one function</p>-->
-                    <h5>Documentation for REVERSE</h5>
-                    <p>I will come and work on the documentation.</p>
+                    <h2>Project Documentation: String Reverser</h2>
+                    <h6>Overview</h6>
+                    <p>This project is a JavaScript application that takes a user-entered string from an HTML input element,
+                        reverses the string and displays the reversed result on the webpage. It uses three main functions: 
+                        a controller function <strong>(getValues)</strong>, a logic function <strong>(reverseString)</strong>, and 
+                        a view function <strong>(displayString)</strong>. The application also toggles the visibility of an 
+                        alert box to display the result. 
+                    </p>
+                    <h3>Functions</h3>
+                    <h6>Function 1 : getValue()</h6>
+                    <p>
+                        <strong>Purpose:</strong> Acts as a controller function to initiate the string reversal process by retrieving
+                        the user's input and coordinating the logic and view functions <br>
+                        <strong>Functionality:</strong><br>
+                        1. Hides the alert box by adding the <strong>invisible</strong> class to the element with <strong>id="alert"</strong><br>
+                        2. Retrieves the user's input from the HTML input element with <strong>id="UserString"</strong><br>
+                        3. Calls <strong>reverseString()</strong> to reverse the input string and stores the result in <strong>revString</strong><br>
+                        4. Calls <strong>displayString()</strong> to display the reversed string on the page. <br>
+                        <strong>* Parameters: </strong> None <br>
+                        <strong>* Returns: </strong> None <br>
+
+                    <h6>Function 2 : reverseString(userString)</h6>
+                    <strong>Purpose:</strong> Serves as a logic function to reverse the characters of a given string using a <strong> for-loop</strong> approach <br>
+                    <strong>Functionality:</strong><br>
+                    1. Initializes an empty array <strong>revString</strong><br>
+                    2. Iterates over <strong>userString</strong> from the last character to the first, appending each character to <strong>revString</strong><br>
+                    3. Returns the reversed string <br>
+
+                    <strong>* Parameters:</strong>
+                    <strong>userString(string): </strong> the input string to be reversed <br>
+                    <strong>* Returns: revString(string)-</strong> The reversed version of <strong>userString</strong> <br>
+                    <strong>* Notes:</strong><br>
+                    1. The function concatenates characters to an array using <strong>+=</strong>, which implicitly converts the array to a string due to JavaScript's type coercion.<br>
+                    </p>
+                    <h6>Function 3 : displayString(revString)</h6>
+                    <p>
+                        <strong>Purpose:</strong> Serves as the view function to display the reversed characters on the webpage and make the box visible.<br>
+                        <strong>Functionality:</strong><br>
+                        1. Updates the inner HTML of the element of the element with <strong>id="msg"</strong> to show the reversed string in the format:
+                        <strong>Your word reversed is: ${revString}</strong><br>
+                        2. Removes the <strong>invisible</strong> class from the element with <strong>id="alert"</strong>, making it visible. <br>
+
+
+                        <strong>* Parameters:</strong><strong>revString(string):</strong>The reversed string to display<br>
+    
+                        <strong>* Returns:</strong> None<br>
+
+                    </p>
+
                 </div>
             </div>
         </div>
